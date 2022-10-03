@@ -15,7 +15,7 @@ This script uses the mayapy api to generate a scene with geometry, and then save
 This script creates a snowman!
 
 positional arguments:
-> H : Declare snowman height as tall / short
+> H (Declare snowman height as tall / short)
 
 optional arguments:
 >  -h, --help (Show this help message and exit)\
