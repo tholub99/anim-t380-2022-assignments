@@ -20,3 +20,7 @@ positional arguments:
 optional arguments:
 >  -h, --help (Show this help message and exit)\
 >  --nox (Hide extra snowman features)
+
+
+### Example
+> mayapy main.py tall --nox
