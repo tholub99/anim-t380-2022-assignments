@@ -5,13 +5,13 @@ import argparse
 
 maya.standalone.initialize()
 
-parser = argparse.ArgumentParser(description='This script creates snowman!')
+parser = argparse.ArgumentParser(description='This script creates a snowman!')
 parser.add_argument('height', metavar='H', type=str,
                     help="Declare snowman height: tall/short")
 
 parser.add_argument('--nox', dest='hasExtras', action='store_const',
                     const=False, default=True,
-                    help="Hide extra features")
+                    help="Hide extra snowman features")
 
 args = parser.parse_args()
 if(args.height != 'tall' and args.snow_height != 'short'):
