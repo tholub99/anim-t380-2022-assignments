@@ -30,4 +30,4 @@ For new file:
 > mayapy main.py --new asset.model.tholub
 
 To iterate file:
-> mayapy main.py asset.mode.tholub.1.ma
+> mayapy main.py asset.model.tholub.1.ma
