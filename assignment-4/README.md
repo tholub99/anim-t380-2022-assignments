@@ -7,7 +7,7 @@
 
 ### Description
 
-This assignment uses mayapy file commands to parse and iterate an asset file.
+This assignment uses mayapy file commands to parse and iterate an asset file. Didn't have a lot of time this week so went with a really simple version that doesn't use the environment and updates the file name with regex.
 
 ### Usage 
 >mayapy main.py [-h] [--new] f
