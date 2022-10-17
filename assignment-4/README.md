@@ -1,5 +1,5 @@
 
-# ANIM T380 Assignment 3
+# ANIM T380 Assignment 4
 
 ## Tristan Holub (tjh347)
 
@@ -7,20 +7,27 @@
 
 ### Description
 
-This assignment uses aliases, shell, and python scripts to create a maya file with an empty group named by an environment variable in a custom directory.
-
-Done in Git Bash
+This assignment uses mayapy file commands to parse and iterate an asset file.
 
 ### Usage 
-> mayapy main.py
+>mayapy main.py [-h] [--new] f
 
-The python script must be run from the python dorectory after running the shell script, otherwise there will be an invalid path.
+This script iterates files!
+
+positional arguments:
+>  f :&emsp;Declare file name\
+&emsp;New file :&emsp;&emsp;asset.type.user\
+&emsp;Iterate file :&emsp; asset.type.user.#.ma
+
+optional arguments:
+> -h, --help :&emsp;show this help message and exit\
+> --new :&emsp;&emsp;&ensp;Create New File
 
 
 ### Example
-From assignment dir:
-> setenv\
-> sh bin/createDir.sh
 
-From python dir:
-> mayapy main.py
+For new file:
+> mayapy main.py --new asset.model.tholub
+
+To iterate file:
+> mayapy main.py asset.mode.tholub.1.ma

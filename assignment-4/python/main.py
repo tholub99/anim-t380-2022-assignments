@@ -7,7 +7,7 @@ import argparse
 
 maya.standalone.initialize()
 
-parser = argparse.ArgumentParser(description='This script creates a snowman!')
+parser = argparse.ArgumentParser(description='This script iterates files!')
 parser.add_argument('fileName', metavar='f', type=str,
                     help="Declare file name")
 
@@ -16,6 +16,10 @@ parser.add_argument('--new', dest='isNew', action='store_const',
                     help="Create New File")
 
 args = parser.parse_args()
+
+'''
+Checks fileName for valid naming conventions
+'''
 def isValidName(fileName, isNew):
     if(isNew):
         res = re.fullmatch('^(\w+\.){2}(\w+)$', fileName)
@@ -30,13 +34,15 @@ def isValidName(fileName, isNew):
     
     return True
 
-    
+'''
+Creates a new file at iteration 1
+'''
 def CreateNewFile(fileName, cwd):
     cmds.file(new=True)
     cmds.file(rn=(os.path.join(cwd, fileName + '.1.ma')))
     
 '''
-Iterate File name
+Iterate File
 '''
 def IterateFile():
     fileName = cmds.file(q=True, sn=True)
@@ -47,8 +53,10 @@ def IterateFile():
     Rename File
     '''
     cmds.file(rn=(re.sub('(\d+)\.ma', nextItr, fileName)))
-    
+
+
 '''
+MAIN
 Open File or Create New File
 '''
 cwd = os.getcwd()
