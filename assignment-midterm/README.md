@@ -33,7 +33,7 @@ project
 │   │   email configuration files (.ecfg)
 │   
 └───exports
-│   │   email configuration files (.ecfg)
+│   │   CSV export
 │       
 └───image_notes
 │   │   preset image txt notes
