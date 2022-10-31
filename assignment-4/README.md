@@ -7,7 +7,7 @@
 
 ### Description
 
-This assignment uses mayapy file commands to parse and iterate an asset file.
+This assignment uses mayapy file commands to parse and iterate an asset file. Didn't have a lot of time this week so went with a really simple version that doesn't use the environment and updates the file name with regex.
 
 ### Usage 
 >mayapy main.py [-h] [--new] f
@@ -30,4 +30,4 @@ For new file:
 > mayapy main.py --new asset.model.tholub
 
 To iterate file:
-> mayapy main.py asset.mode.tholub.1.ma
+> mayapy main.py asset.model.tholub.1.ma
