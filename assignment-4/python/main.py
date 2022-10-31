@@ -16,6 +16,8 @@ parser.add_argument('--new', dest='isNew', action='store_const',
                     help="Create New File")
 
 args = parser.parse_args()
+global CWD = os.getcwd()
+global FILE_FORMAT = '{asset}.{task}.{artist}.{version}.{ext}'
 
 '''
 Checks fileName for valid naming conventions
@@ -37,9 +39,16 @@ def isValidName(fileName, isNew):
 '''
 Creates a new file at iteration 1
 '''
-def CreateNewFile(fileName, cwd):
+def CreateNewFile(asset, task, artist):
+    asset_info = {
+        'asset': asset,
+        'task': task,
+        'artist': artist, # usually built-in
+        'version': 1,
+        'ext': 'ma'
+    }
     cmds.file(new=True)
-    cmds.file(rn=(os.path.join(cwd, fileName + '.1.ma')))
+    cmds.file(rn=(os.path.join(CWD, FILE_FORMAT.format(**asset_info))))
     
 '''
 Iterate File
@@ -59,17 +68,16 @@ def IterateFile():
 MAIN
 Open File or Create New File
 '''
-cwd = os.getcwd()
 if(not isValidName(args.fileName, args.isNew)):
     sys.exit(1)
 
 if(args.isNew):
     print('Creating New File...')
-    CreateNewFile(args.fileName, cwd)
+    CreateNewFile(args.fileName, CWD)
 
-elif(cmds.file(os.path.join(cwd, args.fileName), q=True, ex=True)):
+elif(cmds.file(os.path.join(CWD, args.fileName), q=True, ex=True)):
     print('Opening File')
-    cmds.file(os.path.join(cwd, args.fileName), o=True)
+    cmds.file(os.path.join(CWD, args.fileName), o=True)
     IterateFile()
 else:
     print('File Not Found')
